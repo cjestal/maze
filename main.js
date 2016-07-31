@@ -1,6 +1,8 @@
 var ship;
 var mainState = {
 	preload: function() {
+		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    	game.scale.updateLayout();
 		game.load.image('ship','assets/bird.png');
 		game.load.image('rock','assets/pipe.png');
 		game.load.image('space','assets/space.jpg');
@@ -103,7 +105,7 @@ var mainState = {
 	}
 };
 
-var game = new Phaser.Game(390,520);
+var game = new Phaser.Game(390,520, Phaser.AUTO);
 
 game.state.add('main',mainState);
 game.state.start('main');
